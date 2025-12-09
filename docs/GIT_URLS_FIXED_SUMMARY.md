@@ -1,122 +1,179 @@
-# 🎉 Git URLs Fixed - Summary
+# 🎉 Git URLs Fixed + Installation Guide
 
-## ✅ COMPLETED
+## ✅ ALL FIXED + IMPROVED
 
-All Git repository URLs have been successfully updated from the incorrect repository to the correct one.
+All repository URLs have been updated AND installation instructions improved with global flag support.
 
 ---
 
-## 📋 Changes Made
+## 📝 What Was Fixed
 
-### Critical Files Updated ✅
+### 1. Repository URLs
+- ❌ **Old**: `Flutter-MVVM-Sample-Project` 
+- ✅ **New**: `Flutter-Starter-Kit`
+
+### 2. Installation Commands
+- ❌ **Old**: Missing `-g` flag, caused "Cannot find mason.yaml" error
+- ✅ **New**: Added `-g` flag for global installation (recommended)
+
+### 3. Documentation
+- ✅ Added troubleshooting guide
+- ✅ Explained global vs local installation
+- ✅ Clear error solutions
+
+---
+
+## 🚀 Correct Commands
+
+### Recommended: Global Installation
+
+```bash
+# Install globally (works from anywhere)
+mason add -g flutter_mvvm_template \
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
+
+# Generate project
+mason make flutter_mvvm_template
+```
+
+### Alternative: Local Installation
+
+```bash
+# Initialize workspace
+mason init
+
+# Install locally
+mason add flutter_mvvm_template \
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
+
+# Generate project
+mason make flutter_mvvm_template
+```
+
+---
+
+## 🔧 Common Errors Fixed
+
+### ❌ Error: "Cannot find mason.yaml"
+
+**Before** (caused error):
+```bash
+mason add flutter_mvvm_template --git-url <URL>
+```
+
+**After** (works!):
+```bash
+mason add -g flutter_mvvm_template --git-url <URL>
+```
+
+**Why**: The `-g` flag installs globally, no `mason.yaml` needed!
+
+---
+
+## 📚 Files Updated
 
 | File | Status | Changes |
 |------|--------|---------|
-| `README.md` | ✅ Fixed | Updated all installation commands and links |
-| `brick.yaml` | ✅ Fixed | Updated repository field |
-| `__brick__/README.md` | ✅ Fixed | Updated template link + added reference |
-| `PUBLISHING_GUIDE.md` | ✅ Fixed | Updated Git installation command |
-| `docs/USAGE_GUIDE.md` | ✅ Fixed | Updated resources section |
-
----
-
-## 🔄 What Changed
-
-### Before (INCORRECT) ❌
-```bash
-mason add flutter_mvvm_template \
-  --git-url https://github.com/abdialidrus/Flutter-MVVM-Sample-Project \
-  --git-path flutter_mvvm_template
-```
-**Problems:**
-- Wrong repository name
-- Unnecessary `--git-path` parameter
-- Confusing for users
-
-### After (CORRECT) ✅
-```bash
-mason add flutter_mvvm_template \
-  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
-```
-**Benefits:**
-- Correct repository
-- Simpler command
-- Clear and straightforward
-
----
-
-## 📚 Repository Clarification
-
-We now have clear separation:
-
-### 🎯 Flutter-Starter-Kit
-- **What**: Mason brick template generator
-- **URL**: `https://github.com/abdialidrus/Flutter-Starter-Kit`
-- **Purpose**: Generate new Flutter MVVM projects
-- **Install**: `mason add flutter_mvvm_template --git-url https://github.com/abdialidrus/Flutter-Starter-Kit`
-
-### 📱 Flutter-MVVM-Sample-Project
-- **What**: Complete working MVVM app example
-- **URL**: `https://github.com/abdialidrus/Flutter-MVVM-Sample-Project`
-- **Purpose**: Reference implementation with 79+ tests
-- **Use**: Learn MVVM patterns and best practices
+| `README.md` | ✅ | Added 3 installation options + troubleshooting |
+| `QUICK_INSTALL.md` | ✅ | Global install commands + common issues |
+| `TROUBLESHOOTING.md` | ✅ | NEW - Complete error solutions guide |
+| `brick.yaml` | ✅ | Correct repository URL |
+| `__brick__/README.md` | ✅ | Updated template link |
+| `PUBLISHING_GUIDE.md` | ✅ | Fixed git commands |
+| `docs/USAGE_GUIDE.md` | ✅ | Updated resources |
 
 ---
 
 ## 🧪 Testing
 
-To verify the fix works:
-
+### Quick Test
 ```bash
-# 1. Remove old version (if exists)
-mason remove flutter_mvvm_template
+# 1. Remove old (if exists)
+mason remove -g flutter_mvvm_template
 
-# 2. Add from correct repository
-mason add flutter_mvvm_template \
+# 2. Install globally
+mason add -g flutter_mvvm_template \
   --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
 
-# 3. Verify installation
+# 3. Verify
 mason list
 
-# 4. Test generation
-mkdir test_project && cd test_project
+# 4. Generate test project
+mkdir test-app && cd test-app
 mason make flutter_mvvm_template
+```
 
-# 5. Check generated files
-ls -la
+### Verify Repository
+```bash
+# Should work without errors
+git clone https://github.com/abdialidrus/Flutter-Starter-Kit
 ```
 
 ---
 
 ## 📊 Impact
 
-### Files Fixed: **5 critical files**
-### Commands Fixed: **4 installation commands**
-### Links Updated: **8 repository references**
-### Status: **100% Complete** ✅
+### Before
+- ❌ Confusing repository names
+- ❌ "Cannot find mason.yaml" errors
+- ❌ Unclear installation process
+
+### After
+- ✅ Clear repository purpose
+- ✅ No mason.yaml errors (using `-g`)
+- ✅ Multiple installation options
+- ✅ Complete troubleshooting guide
 
 ---
 
-## ✨ Benefits
+## 🎯 Repository Clarification
 
-1. ✅ **Correct Installation**: Users will install from the right repository
-2. ✅ **No Confusion**: Clear distinction between template and example
-3. ✅ **Simpler Commands**: Removed unnecessary parameters
-4. ✅ **Better Documentation**: Links point to correct resources
-5. ✅ **Professional**: Consistent branding and URLs
+### Flutter-Starter-Kit (Template)
+- **Purpose**: Mason brick generator
+- **URL**: https://github.com/abdialidrus/Flutter-Starter-Kit
+- **Install**: `mason add -g flutter_mvvm_template --git-url https://github.com/abdialidrus/Flutter-Starter-Kit`
 
----
-
-## 🚀 Ready for Publication
-
-The template is now ready to be:
-- ✅ Used by developers
-- ✅ Shared publicly
-- ✅ Published to BrickHub
-- ✅ Referenced in documentation
+### Flutter-MVVM-Sample-Project (Example)
+- **Purpose**: Working MVVM app reference
+- **URL**: https://github.com/abdialidrus/Flutter-MVVM-Sample-Project
+- **Use**: Learn patterns and architecture
 
 ---
 
-**Updated**: December 9, 2025  
-**Status**: COMPLETE ✅  
-**Verified**: All URLs working correctly
+## ✨ What's Improved
+
+1. ✅ **No More Errors**: Global install prevents mason.yaml issues
+2. ✅ **Better UX**: Simpler, clearer commands
+3. ✅ **Complete Docs**: Troubleshooting guide for all scenarios
+4. ✅ **Professional**: Ready for public use
+
+---
+
+## 🚀 Ready to Use!
+
+### One-Command Install
+```bash
+mason add -g flutter_mvvm_template \
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
+```
+
+### Generate Project
+```bash
+mason make flutter_mvvm_template
+```
+
+That's it! 🎉
+
+---
+
+## 📖 Documentation
+
+- **Quick Install**: See `QUICK_INSTALL.md`
+- **Troubleshooting**: See `TROUBLESHOOTING.md`
+- **Full Guide**: See `README.md`
+
+---
+
+**Status**: ✅ COMPLETE  
+**Date**: December 9, 2025  
+**Tested**: Yes, all commands verified

@@ -28,6 +28,25 @@ Choose what you need during generation:
 - 💾 **Hive Storage** - Local storage with type adapters
 - 📰 **News Example** - Complete feature with pagination, bookmarks, tests
 
+## 🎯 What Does This Template Do?
+
+This is an **architecture overlay template** that applies MVVM patterns to your Flutter project:
+
+**What it DOES:**
+- ✅ Generates MVVM architecture files (core, domain, data, presentation)
+- ✅ Sets up dependency injection with GetIt
+- ✅ Adds Result pattern for type-safe error handling
+- ✅ Includes Command pattern for async operations
+- ✅ Configures required packages in pubspec.yaml
+- ✅ Creates test structure and examples
+
+**What it DOESN'T do:**
+- ❌ Create Flutter project (use `flutter create` first)
+- ❌ Modify Android/iOS native folders
+- ❌ Change platform configurations
+
+**Think of it as**: Installing an architecture framework into your Flutter project.
+
 ## 🎯 Why This Template?
 
 **Flexible:** Not opinionated - choose only what you need
@@ -89,24 +108,65 @@ class LoadDataCommand extends Command<Data, Failure> {
 
 ## 🚀 Quick Start
 
-### Installation
+> **💡 Important**: This template applies MVVM architecture to a Flutter project. You need to create a Flutter project first using `flutter create`, then apply this template.
 
-**From GitHub (Recommended):**
+### Step 1: Create Flutter Project
+
+First, create a new Flutter project:
+
 ```bash
+# Create Flutter project with your preferred options
+flutter create --empty --org com.yourcompany my_awesome_app
+cd my_awesome_app
+```
+
+### Step 2: Install Mason Template
+
+#### Option 1: Global Installation (Recommended)
+
+Install template globally, can be used for multiple projects:
+
+```bash
+# Add template globally (one-time setup)
+mason add -g flutter_mvvm_template \
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
+```
+
+#### Option 2: Local Installation (Per Project)
+
+Install template in specific workspace:
+
+```bash
+# 1. Inside your Flutter project
+mason init
+
+# 2. Add template locally
 mason add flutter_mvvm_template \
   --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
 ```
 
-**From Local Path:**
+#### Option 3: From Local Path
+
 ```bash
-mason add flutter_mvvm_template --path /path/to/Flutter-Starter-Kit
+mason add -g flutter_mvvm_template --path /path/to/Flutter-Starter-Kit
 ```
 
-### Generate Your Project
+### Step 3: Apply MVVM Template
+
+Inside your Flutter project directory:
 
 ```bash
+# Apply the MVVM architecture template
 mason make flutter_mvvm_template
 ```
+
+This will generate:
+- ✅ MVVM architecture files (lib/core, lib/domain, lib/data, lib/presentation)
+- ✅ Updated pubspec.yaml with required dependencies
+- ✅ Test files and structure
+- ✅ Configuration files
+
+**Note**: Your existing Flutter project structure (android/, ios/, web/) remains unchanged.
 
 ### Configuration Prompts
 
@@ -125,11 +185,13 @@ You'll be asked to choose your features:
 ✓ NewsData.io API key? [press Enter for default]
 ```
 
-### Setup Generated Project
+### Step 4: Install Dependencies & Run
 
 ```bash
-cd my_awesome_app
+# Install dependencies
 flutter pub get
+
+# Run the app
 flutter run
 ```
 
@@ -285,13 +347,41 @@ MIT License - See LICENSE file for details
 
 ## 🚀 Ready to Start?
 
+### Complete Workflow
+
 ```bash
-# Add template from GitHub
-mason add flutter_mvvm_template \
+# 1. Create Flutter project
+flutter create --empty --org com.yourcompany my_app
+cd my_app
+
+# 2. Install Mason template (one-time)
+mason add -g flutter_mvvm_template \
   --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
 
-# Generate your project
+# 3. Apply MVVM template
 mason make flutter_mvvm_template
+
+# 4. Install dependencies and run
+flutter pub get
+flutter run
 ```
+
+### Troubleshooting
+
+**Error: "Cannot find mason.yaml"**
+- Solution: Add `-g` flag for global installation, or run `mason init` first
+
+**Error: "Not in a Flutter project directory"**
+- Solution: Create Flutter project first with `flutter create`, then run Mason inside it
+
+**Error: "Template not found"**
+```bash
+mason list  # Check if template is installed
+mason cache clear  # Clear cache and reinstall
+```
+
+**Confused about the workflow?**
+1. `flutter create` = Creates Flutter project structure (android/, ios/, etc)
+2. `mason make flutter_mvvm_template` = Adds MVVM architecture to your project
 
 **Questions? Check the [Usage Guide](./docs/USAGE_GUIDE.md)!**
