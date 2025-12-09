@@ -35,12 +35,36 @@ vars:
   
   use_api:
     type: boolean
-    description: Include API integration setup?
+    description: Include API integration setup with Dio?
     default: true
     prompt: Include API integration?
   
   api_base_url:
     type: string
     description: Base URL for API (only if use_api is true)
-    default: https://api.example.com
-    prompt: API base URL? (optional)
+    default: https://newsdata.io/api/1
+    prompt: API base URL?
+  
+  use_go_router:
+    type: boolean
+    description: Include Go Router for type-safe navigation?
+    default: true
+    prompt: Include Go Router?
+  
+  use_local_storage:
+    type: boolean
+    description: Include Hive for local storage?
+    default: true
+    prompt: Include Hive local storage?
+  
+  include_example_feature:
+    type: boolean
+    description: Include example News feature (complete MVVM implementation with pagination)?
+    default: true
+    prompt: Include example News feature?
+  
+  newsdata_api_key:
+    type: string
+    description: NewsData.io API key (get free key at https://newsdata.io)
+    default: pub_61727310fd3aa7bb39c4b25a499b86b2aa086
+    prompt: NewsData.io API key? (press Enter for default)

@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:{{project_name.snakeCase()}}/app.dart';
+import 'package:{{project_name.snakeCase()}}/core/di/injection_container.dart';
+{{#use_local_storage}}
+import 'package:{{project_name.snakeCase()}}/core/storage/hive_service.dart';
+{{/use_local_storage}}
 
-import 'core/di/injection_container.dart';
-import 'presentation/app.dart';
-
+/// Main entry point
 void main() async {
+  // Ensure Flutter is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize dependency injection
-  await initializeDependencies();
+{{#use_local_storage}}
+  // Initialize Hive
+  await HiveService.init();
 
+{{/use_local_storage}}
+  // Setup Dependency Injection
+  await setupDependencies();
+
+  // Run app
   runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '{{project_name.titleCase()}}',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const App(),
-    );
-  }
 }
