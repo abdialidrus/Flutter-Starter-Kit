@@ -1,0 +1,46 @@
+name: flutter_mvvm_template
+description: A production-ready Flutter MVVM template with Clean Architecture, pagination, testing, and best practices
+
+repository: https://github.com/abdialidrus/Flutter-MVVM-Sample-Project
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.52 <0.2.0"
+
+vars:
+  project_name:
+    type: string
+    description: The name of your Flutter project (snake_case)
+    default: my_flutter_app
+    prompt: What is your project name?
+  
+  organization:
+    type: string
+    description: Organization domain (reverse domain notation like com.example)
+    default: com.example
+    prompt: What is your organization domain?
+  
+  description:
+    type: string
+    description: A short description of your project
+    default: A new Flutter MVVM project
+    prompt: Project description?
+  
+  author:
+    type: string
+    description: Author name
+    default: Your Name
+    prompt: Author name?
+  
+  use_api:
+    type: boolean
+    description: Include API integration setup?
+    default: true
+    prompt: Include API integration?
+  
+  api_base_url:
+    type: string
+    description: Base URL for API (only if use_api is true)
+    default: https://api.example.com
+    prompt: API base URL? (optional)
