@@ -159,8 +159,7 @@ If you prefer not to use BrickHub, you can publish via Git:
 2. **Users can install from Git**:
    ```bash
    mason add flutter_mvvm_template \
-     --git-url https://github.com/abdialidrus/Flutter-MVVM-Sample-Project \
-     --git-path flutter_mvvm_template
+     --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
    ```
 
 ## Troubleshooting

@@ -567,7 +567,8 @@ void main() {
 
 ## 🔗 Resources
 
-- **Main Project:** [Flutter-MVVM-Sample-Project](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project)
+- **Template Repository:** [Flutter-Starter-Kit](https://github.com/abdialidrus/Flutter-Starter-Kit)
+- **Example Project:** [Flutter-MVVM-Sample-Project](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project)
 - **Mason Docs:** [docs.brickhub.dev](https://docs.brickhub.dev)
 - **Clean Architecture:** [blog.cleancoder.com](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - **MVVM Pattern:** [Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)

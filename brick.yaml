@@ -1,7 +1,7 @@
 name: flutter_mvvm_template
 description: A production-ready Flutter MVVM template with Clean Architecture, pagination, testing, and best practices
 
-repository: https://github.com/abdialidrus/Flutter-MVVM-Sample-Project
+repository: https://github.com/abdialidrus/Flutter-Starter-Kit
 
 version: 0.1.0+1
 

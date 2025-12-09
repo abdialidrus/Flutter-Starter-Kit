@@ -91,16 +91,15 @@ class LoadDataCommand extends Command<Data, Failure> {
 
 ### Installation
 
-**From GitHub:**
+**From GitHub (Recommended):**
 ```bash
 mason add flutter_mvvm_template \
-  --git-url https://github.com/abdialidrus/Flutter-MVVM-Sample-Project \
-  --git-path flutter_mvvm_template
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
 ```
 
 **From Local Path:**
 ```bash
-mason add flutter_mvvm_template --path /path/to/flutter_mvvm_template
+mason add flutter_mvvm_template --path /path/to/Flutter-Starter-Kit
 ```
 
 ### Generate Your Project
@@ -225,7 +224,8 @@ lib/
 **Template Documentation:**
 - [**Usage Guide**](./docs/USAGE_GUIDE.md) - Complete usage guide with examples
 - [**Implementation Status**](./docs/IMPLEMENTATION_STATUS.md) - Current implementation details
-- [**Main Project**](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project) - Full working example
+- [**GitHub Repository**](https://github.com/abdialidrus/Flutter-Starter-Kit) - This template repository
+- [**Example Project**](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project) - Full working MVVM example
 
 **In Generated Project:**
 - Core patterns (Result, Command, Failures)
@@ -267,7 +267,9 @@ lib/
 
 ## 🤝 Contributing
 
-Based on [Flutter-MVVM-Sample-Project](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project) - a production-ready MVVM implementation with 79+ tests.
+This Mason template helps you generate projects based on the architecture from [Flutter-MVVM-Sample-Project](https://github.com/abdialidrus/Flutter-MVVM-Sample-Project) - a production-ready MVVM implementation with 79+ tests.
+
+**Repository**: [Flutter-Starter-Kit](https://github.com/abdialidrus/Flutter-Starter-Kit)
 
 ## 📄 License
 
@@ -284,10 +286,9 @@ MIT License - See LICENSE file for details
 ## 🚀 Ready to Start?
 
 ```bash
-# Add template
+# Add template from GitHub
 mason add flutter_mvvm_template \
-  --git-url https://github.com/abdialidrus/Flutter-MVVM-Sample-Project \
-  --git-path flutter_mvvm_template
+  --git-url https://github.com/abdialidrus/Flutter-Starter-Kit
 
 # Generate your project
 mason make flutter_mvvm_template
